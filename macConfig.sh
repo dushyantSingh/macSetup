@@ -53,7 +53,7 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 
 echo
 echo "${bold}6. Create working directory${normal}"
-mkdir 'Workspace'
+mkdir '~/Workspace'
 
 echo
 echo "${bold}7. Do you want to install flutter? (y/n)${normal}"
