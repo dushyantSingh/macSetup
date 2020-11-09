@@ -7,4 +7,4 @@ Download macConfig.sh or clone the git repo. <br>
 Run 
 ```chmod +x ./macConfig.sh```
 to give executable permission. <br>
-It will download and install xcode command line tools and Homebrew
+It will download and install xcode command line tools and Homebrew. Follow the instructions to install required setup.
