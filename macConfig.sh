@@ -60,7 +60,7 @@ echo "${bold}7. Do you want to install flutter? (y/n)${normal}"
 read value
 if [ $value == 'y' ]
 then
-    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/Workspace/flutter2
+    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/Workspace/flutter
     echo 'Verify flutter installation'
     flutter doctor
 else 
