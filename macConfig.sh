@@ -25,35 +25,35 @@ echo
 echo "${bold}1. Installing xcode CLI${normal}"
 xcode-select --install
 
-echo
-echo "${bold}2. Checking for Homebrew${normal}"
-if [[ $(command -v brew) == "" ]]; then
-    echo "Installing Hombrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-else
-    echo "Updating Homebrew"
-    brew update
-fi
+# echo
+# echo "${bold}2. Checking for Homebrew${normal}"
+# if [[ $(command -v brew) == "" ]]; then
+#     echo "Installing Hombrew"
+#     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# else
+#     echo "Updating Homebrew"
+#     brew update
+# fi
 
-echo
-echo "${bold}2. Installing iterm 2${normal}"
-brew cask install iterm2
+# echo
+# echo "${bold}2. Installing iterm 2${normal}"
+# brew cask install iterm2
 
-echo
-echo  "${bold}3. Installing Oh my zsh${normal}"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# echo
+# echo  "${bold}3. Installing Oh my zsh${normal}"
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo
-echo "${bold}4.Cloning zsh config file${normal}"
-git clone https://github.com/dushyantSingh/ohmyzshConfig.git ~/
+# echo
+# echo "${bold}4.Cloning zsh config file${normal}"
+# git clone https://github.com/dushyantSingh/ohmyzshConfig.git ~/
 
-echo
-echo "${bold}5. Installing PowerLevel 10k${normal}"
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# echo
+# echo "${bold}5. Installing PowerLevel 10k${normal}"
+# git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-echo
-echo "${bold}6. Create working directory${normal}"
-mkdir '~/Workspace'
+# echo
+# echo "${bold}6. Create working directory${normal}"
+# mkdir 'Workspace'
 
 echo
 echo "${bold}7. Do you want to install flutter? (y/n)${normal}"
@@ -79,7 +79,23 @@ else
 fi
 
 echo
-echo "${bold}9. Do you want to install Alfred 4? (y/n)${normal}"
+echo "${bold}9. Do you want to install nodejs? (y/n)${normal}"
+read value
+if [ $value == 'y' ]
+then
+    if [[ $(command -v brew) == "" ]]; then
+    echo "Installing nodejs"
+    brew install nodejs
+else
+    echo "Updating nodejs"
+    brew upgrade nodejs
+fi
+else 
+    echo 'You can manually install nodejs by excuting brew install nodejs'
+fi
+
+echo
+echo "${bold}10. Do you want to install Alfred 4? (y/n)${normal}"
 read value
 if [ $value == 'y' ]
 then
