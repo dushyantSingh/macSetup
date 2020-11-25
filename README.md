@@ -29,8 +29,8 @@ that by downloading the install script first, looking through it so everything l
 then running it:
 
 ```shell
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sh install.sh
+wget https://raw.githubusercontent.com/dushyantSingh/macSetup/main/macConfig.sh
+sh macConfig.sh
 ```
 Run the following command to give executable permission
 ```chmod +x ./macConfig.sh```
