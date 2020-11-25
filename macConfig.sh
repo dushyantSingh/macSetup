@@ -1,3 +1,16 @@
+#
+# This script should be run via curl:
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/dushyantSingh/macSetup/main/macConfig.sh)"
+# or via wget:
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/dushyantSingh/macSetup/main/macConfig.sh)"
+# or via fetch:
+#   sh -c "$(fetch -o - https://raw.githubusercontent.com/dushyantSingh/macSetup/main/macConfig.sh)"
+#
+# As an alternative, you can first download the install script and run it afterwards:
+#   wget https://raw.githubusercontent.com/dushyantSingh/macSetup/main/macConfig.sh
+#   sh macConfig.sh
+#
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -25,35 +38,35 @@ echo
 echo "${bold}1. Installing xcode CLI${normal}"
 xcode-select --install
 
-# echo
-# echo "${bold}2. Checking for Homebrew${normal}"
-# if [[ $(command -v brew) == "" ]]; then
-#     echo "Installing Hombrew"
-#     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# else
-#     echo "Updating Homebrew"
-#     brew update
-# fi
+echo
+echo "${bold}2. Checking for Homebrew${normal}"
+if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Hombrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+    echo "Updating Homebrew"
+    brew update
+fi
 
-# echo
-# echo "${bold}2. Installing iterm 2${normal}"
-# brew cask install iterm2
+echo
+echo "${bold}2. Installing iterm 2${normal}"
+brew cask install iterm2
 
-# echo
-# echo  "${bold}3. Installing Oh my zsh${normal}"
-# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo
+echo  "${bold}3. Installing Oh my zsh${normal}"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# echo
-# echo "${bold}4.Cloning zsh config file${normal}"
-# git clone https://github.com/dushyantSingh/ohmyzshConfig.git ~/
+echo
+echo "${bold}4.Cloning zsh config file${normal}"
+git clone https://github.com/dushyantSingh/ohmyzshConfig.git ~/
 
-# echo
-# echo "${bold}5. Installing PowerLevel 10k${normal}"
-# git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+echo
+echo "${bold}5. Installing PowerLevel 10k${normal}"
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-# echo
-# echo "${bold}6. Create working directory${normal}"
-# mkdir 'Workspace'
+echo
+echo "${bold}6. Create working directory${normal}"
+mkdir 'Workspace'
 
 echo
 echo "${bold}7. Do you want to install flutter? (y/n)${normal}"
@@ -106,7 +119,7 @@ then
     # sudo hdiutil attach Alfred.dmg
     # sudo installer -package /Volumes/Alfred/Alfred.pkg -target /
 else 
-    echo 'You can manually install cocoapods by excuting sudo gem install cocoapods'
+    echo 'You can manually install Alfred by downloading it from https://cachefly.alfredapp.com/Alfred_4.2_1180.dmg'
 fi
 
 echo
@@ -117,15 +130,4 @@ then
     brew cask install rectangle
 else 
     echo 'You can manually install Rectangle by excuting brew cask install rectangle'
-fi
-
-echo
-echo "${bold}11. Do you want to download Magnet? (y/n)${normal}"
-read value
-if [ $value == 'y' ]
-then
-    echo "Opening Magnet..."
-    open https://apps.apple.com/app/id441258766?mt=12
-else 
-    echo 'You can manually install Magnet by searching for Magnet in App store'
 fi
